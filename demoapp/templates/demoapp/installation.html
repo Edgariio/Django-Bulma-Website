@@ -1,0 +1,61 @@
+{% extends 'demoapp/base.html' %}
+
+{% block content %}
+{% load static %}
+    <section class="section">
+        <div class = "container has-text-centered">
+            <span class = "is-size-1">
+                Bulma Installation
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                Very simple, you just need to add Bulma using CSS CDN in the "head" section of an html file like in the image below and you will be set!
+            </span>
+            <br>
+            <br>
+        </div>
+        <div class = "columns is-centered">
+            <img src="{% static 'demoapp/Bulm_Install.png' %}" width="800" height="400">
+        </div>
+        <br>
+        <br>
+        <div class = "container has-text-centered">
+            <span class = "is-size-1">
+                Django Installation
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 1:</strong> Install latest version of Python at <a href="https://www.python.org/downloads/">python.org</a>.
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 2:</strong> Open terminal and run "pip install pipenv".
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 3:</strong> Create the folder where your Django project will be with "mkdir project_name". After it is created go into the directory using "cd project_name".
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 4:</strong> When inside the directory, run "pipenv install django". After it is done you should see this message in the image below:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/Django_install.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 5:</strong> Drag and drop the project folder into any Python editor like Visual Studio Code and you are good to go!
+            </span>
+            <br>
+            <br>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'demoapp/base.html' %}
+
+{% block content %}
+{% load static %}
+    <section class="section">
+        <div class = "container has-text-centered">
+            <span class = "is-size-1">
+                Creating a Posts Page
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                The "Posts Page" will offer the user the ability to make, edit or delete a post.
+            </span>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 1:</strong> In terminal, type "django-admin.py startproject project_name" and "python manage.py startapp project_name"to begin the project. 
+                Your Python editor directory should now look something like this:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/startproject.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 2:</strong> In "settings.py" under main directory of the project, register your app like in the image below for "demoapp":
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/register.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 3:</strong> Under your project app directory (NOT your main project directory) create a urls.py file and add all the urls necessary for your webpage.
+                From the image below only the urls "page4", "delete" and "edit" are necessary:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/urls.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 4:</strong> Now, under your main project direcotry, edit the urls.py file and add the following lines of code to make sure that the root URL points to
+                the new project:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/urlsmain.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 5:</strong> Under your project directory, create a "templates" folder and in there create any necessary html files like in the image below 
+                (only base, edit and page4 are necessary):
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/htmldir.png' %}" width="400" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 6:</strong> Edit the three html files. The "base.html" file will act as a header for all other .html files (make sure to install Bulma using CSS CDN), this is where you also add the Bulma navigation
+                bar so that the user can navigate through the website. Ceate the design of the main poster page and edit page as seen in the images below (order of images is: base.html page4.html edit.html):
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/base.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/page4.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/edit.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 7:</strong> In views.py under project directory, define functions for all the pages and link them to the urls like in the image below, to make sure that Django knows where the user should go. For
+                page4 and edit you should have form checking to make sure user input is registered and saved in a variable and passed as an output:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/views.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 8:</strong> In models.py under the project directory, define the actual "Post" class that will define the posts that the user will make. In the image below the class has two attributes, which are "comment"
+                and "created" (date post was made). Also define the __str__ method that will return the actual content of the post, in this case, the comment itself:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/models.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 9:</strong> In admin.py under project directory, register your new models like in the image below to make sure that Django makes use of them:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/admin.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 10:</strong> Under project directory (NOT main directory!) create a forms.py file and define the form from the model to register with the html form that the user submits like in the image below:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/forms.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+                <strong>Step 11:</strong> Back in terminal run "python manage.py makemigrations" and "python manage.py migrate" so that Django will scan the models.py file and build the migration files automatically and migrate the database.
+                Now you can run the command "python manage.py runserver" to run the server and then copy and paste the url into the web browser to access your Posts page:
+            </span>
+            <br>
+            <br>
+            <div class = "columns is-centered">
+                <img src="{% static 'demoapp/server.png' %}" width="800" height="400">
+            </div>
+            <br>
+            <br>
+            <span class = "is-size-5">
+               See the demo of the <a href="{% url 'page4' %}">Posts page</a>.
+            </span>
+        </div>
+    </section>
+{% endblock %}
